@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { delTodo } from "../redux/modules/todos";
+import { delTodo } from "../redux/slices/todosSlice";
+// import { delTodo } from "../redux/modules/todos";
 
 function TodoList() {
   const todos = useSelector((state) => state.todos);
   const dispatch = useDispatch();
-
+  console.log(todos);
   // State to track which todos are checked
   const [checkedTodos, setCheckedTodos] = useState({});
 

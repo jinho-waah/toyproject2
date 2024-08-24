@@ -1,10 +1,18 @@
-import { combineReducers, createStore } from "redux";
-import todos from "../modules/todos";
+// import { combineReducers, createStore } from "redux";
+// import todos from "../modules/todos";
 
-const rootReducer = combineReducers({
-  todos: todos,
+import { configureStore } from "@reduxjs/toolkit";
+import todosSlice from "../slices/todosSlice";
+
+// const rootReducer = combineReducers({
+//   todos: todos,
+// });
+
+// const store = createStore(rootReducer);
+
+const store = configureStore({
+  reducer: {
+    todos: todosSlice,
+  },
 });
-
-const store = createStore(rootReducer);
-
 export default store;
